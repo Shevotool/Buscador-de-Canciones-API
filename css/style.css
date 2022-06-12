@@ -1,0 +1,38 @@
+  html {
+    font-family: sans-serif;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .loader {
+    display: none;
+    margin: auto;
+  }
+
+  .song blockquote {
+    white-space: pre-wrap;
+  }
+
+  .btnEnviar {
+    background-color: rgb(219, 95, 57);
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 800px) {
+    main {
+      flex-direction: row;
+    }
+
+    main>* {
+      padding: 1rem;
+      flex-basis: 50%;
+    }
+  }
