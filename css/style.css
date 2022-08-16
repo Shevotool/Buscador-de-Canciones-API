@@ -5,11 +5,11 @@ html {
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .color-screen {
-  background-color: #f8f5f2;
+  background-color: #fffffe;
 }
 
 main {
@@ -24,7 +24,7 @@ main {
 
 /* ***** Form ***** */
 .section-form {
-  background-color: #f45d48;
+  background-color: #36b3b3;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -36,7 +36,7 @@ main {
 }
 
 .section-form h2 {
-  color: aliceblue;
+  color: #fffffe;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
