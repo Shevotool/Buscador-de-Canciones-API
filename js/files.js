@@ -6,7 +6,7 @@ const d = document,
   $artist = d.querySelector(".artist"),
   $song = d.querySelector(".song");
 
-$form.addEventListener("submit", async e => {
+$form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   try {
@@ -28,13 +28,13 @@ $form.addEventListener("submit", async e => {
     console.log(artistData, songData);
 
     if (artistData.artists === null) {
-      $artistTemplate = `<h2>No existe el intérprete <mark>${artist}</mark></h2>`;
+      $artistTemplate = `<h2>No existe el intérprete</h2>`;
     } else {
       let artist = artistData.artists[0];
       $artistTemplate = `
-          <h2>${artist.strArtist}</h2>
+          <h2>Artist: ${artist.strArtist}</h2>
           <img src="${artist.strArtistThumb}" alt="${artist.strArtist}">
-          <p>${artist.intBornYear} - ${(artist.intDiedYear || "Presente")}</p>
+          <p>${artist.intBornYear} - ${artist.intDiedYear || "Presente"}</p>
           <p>${artist.strCountry}</p>
           <p>${artist.strGenre} - ${artist.strStyle}</p>
           <a href="http://${artist.strWebsite}" target="_blank">Sitio Web</a>
@@ -43,10 +43,10 @@ $form.addEventListener("submit", async e => {
     }
 
     if (songData.error) {
-      $songTemplate = `<h2>No existe la canción <mark>${song}</mark></h2>`;
+      $songTemplate = `<h2>No existe la canción</h2>`;
     } else {
       $songTemplate = `
-          <h2>${song.toUpperCase()}</h2>
+          <h2>Song: ${song.toUpperCase()}</h2>
           <blockquote>${songData.lyrics}</blockquote>
           `;
     }
@@ -54,7 +54,6 @@ $form.addEventListener("submit", async e => {
     $loader.style.display = "none";
     $artist.innerHTML = $artistTemplate;
     $song.innerHTML = $songTemplate;
-
   } catch (err) {
     console.log(err);
     let message = err.statusText || "Ocurrió un error";
